@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "az-adf-orders-dev-eastus"
+		},
+		"az_ls_dl_orders_accountKey": {
+			"value": ""
+		},
+		"az_ls_st_orders_connectionString": {
+			"value": ""
+		},
+		"az_ls_dl_orders_properties_typeProperties_url": {
+			"value": "https://azdatalakeorders.dfs.core.windows.net/"
+		}
+	}
+}
