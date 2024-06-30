@@ -5,6 +5,9 @@
 			"referenceName": "az_ls_dl_orders",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "02 Raw"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
