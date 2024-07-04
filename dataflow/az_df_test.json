@@ -39,7 +39,8 @@
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> OrderItemsTestSink"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('roundRobin', 4)) ~> OrderItemsTestSink"
 			]
 		}
 	}
