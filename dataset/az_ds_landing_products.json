@@ -1,0 +1,32 @@
+{
+	"name": "az_ds_landing_products",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "az_ls_st_orders",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "products.json",
+				"container": "landing"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"PRODUCT_ID": {
+					"type": "string"
+				},
+				"PRODUCT_NAME": {
+					"type": "string"
+				},
+				"UNIT_PRICE": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
