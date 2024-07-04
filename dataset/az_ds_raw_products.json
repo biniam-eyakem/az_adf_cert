@@ -5,27 +5,18 @@
 			"referenceName": "az_ls_dl_orders",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "02 Raw"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "products.json",
 				"fileSystem": "raw"
 			}
 		},
-		"schema": {
-			"type": "object",
-			"properties": {
-				"CUSTOMER_ID": {
-					"type": "string"
-				},
-				"FULL_NAME": {
-					"type": "string"
-				},
-				"EMAIL_ADDRESS": {
-					"type": "string"
-				}
-			}
-		}
+		"schema": {}
 	}
 }
