@@ -754,18 +754,16 @@
 						"     allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     ignoreNoFilesFound: false,",
-						"     partitionBy('roundRobin', 2)) ~> OrderItemsRaw",
+						"     partitionBy('hash', 1)) ~> OrderItemsRaw",
 						"OrderItemsRaw sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     partitionFileNames:['order_items.csv'],",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
-						"     partitionBy('key',",
-						"          0,",
-						"          LINE_ITEM_ID",
-						"     )) ~> OrderItemsTestSink"
+						"     partitionBy('hash', 1)) ~> OrderItemsTestSink"
 					]
 				}
 			},
