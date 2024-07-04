@@ -1,0 +1,22 @@
+{
+	"name": "az_ds_landing_stores",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "az_ls_st_orders",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "01 Landing"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "stores.json",
+				"container": "landing"
+			}
+		},
+		"schema": {}
+	}
+}
