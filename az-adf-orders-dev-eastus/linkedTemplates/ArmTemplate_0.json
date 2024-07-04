@@ -722,6 +722,52 @@
 				"[concat(variables('factoryId'), '/datasets/az_ds_raw_order_items')]",
 				"[concat(variables('factoryId'), '/datasets/ds_test_sink_order_items')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pl_test')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "az_df_test",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "az_df_test",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"OrderItemsRaw": {},
+									"OrderItemsTestSink": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/dataflows/az_df_test')]"
+			]
 		}
 	]
 }
