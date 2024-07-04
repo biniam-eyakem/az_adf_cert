@@ -40,7 +40,10 @@
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     partitionBy('roundRobin', 4)) ~> OrderItemsTestSink"
+				"     partitionBy('key',",
+				"          0,",
+				"          LINE_ITEM_ID",
+				"     )) ~> OrderItemsTestSink"
 			]
 		}
 	}
